@@ -8,7 +8,8 @@ import android.widget.GridView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Grid extends AppCompatActivity {
+public class
+Grid extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +19,7 @@ public class Grid extends AppCompatActivity {
 
         List<String> stringList = new ArrayList<>();
         for (int i = 0; i < 42; i++) {
-            stringList.add(Integer.toString(i));
+            stringList.add(" ");
         }
 
         gridView.setAdapter(new ArrayAdapter<>(this, R.layout.connect_button, stringList));

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity="center"
     android:background="@color/colorPrimary"
+    android:gravity="right|end"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -14,9 +14,9 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:padding="50dp"
         android:gravity="center"
         android:orientation="vertical"
+        android:padding="50dp"
         tools:context=".MainActivity">
 
 
