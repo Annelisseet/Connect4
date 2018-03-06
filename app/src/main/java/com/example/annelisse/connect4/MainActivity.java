@@ -15,9 +15,5 @@ public class MainActivity extends AppCompatActivity{ //implements View.OnClickLi
         setContentView(R.layout.activity_main);
         Intent intent7 = new Intent(this, Grid.class);
         startActivity(intent7);
-
-       // findViewById(R.id.GridView).setOnClickListener(this);
     }
-
-
 }
