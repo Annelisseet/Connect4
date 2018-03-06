@@ -11,6 +11,15 @@
     android:orientation="vertical"
     tools:context=".Grid">
 
+    <Button
+        android:id="@+id/botonReiniciar"
+        android:layout_width="150dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/holo_red_dark"
+        android:text="Reiniciar"
+        android:textColor="@android:color/holo_orange_light" />
+
     <GridView
 
         android:id="@+id/myGridViewComponent"
