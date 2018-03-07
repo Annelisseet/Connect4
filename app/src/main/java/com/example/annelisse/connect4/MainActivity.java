@@ -7,16 +7,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity{ //implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity { //implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.botonReiniciar).setOnClickListener(v-> {
-            startActivity(new Intent(this, Grid.class));
-        });
+        findViewById(R.id.iniciarJuego).setOnClickListener((v) ->
+                startActivity(new Intent(this, Grid.class))
+        );
 
     }
 }
