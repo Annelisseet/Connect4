@@ -13,7 +13,11 @@ public class MainActivity extends AppCompatActivity{ //implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent7 = new Intent(this, Grid.class);
-        startActivity(intent7);
+
+        findViewById(R.id.botonReiniciar).setOnClickListener(v-> {
+            startActivity(new Intent(this, Grid.class));
+        });
+
     }
 }
+

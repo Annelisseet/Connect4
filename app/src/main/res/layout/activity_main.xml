@@ -21,6 +21,11 @@
         android:padding="50dp"
         tools:context=".MainActivity">
 
+        <Button
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:text="Iniciar Juego" />
+
 
     </LinearLayout>
 
