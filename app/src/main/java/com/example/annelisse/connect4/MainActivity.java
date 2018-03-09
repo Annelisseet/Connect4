@@ -1,5 +1,6 @@
 package com.example.annelisse.connect4;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -47,6 +48,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             btn.setBackgroundResource(background);
             juego.jugar(position);
         }
+        if (juego.juegoHaTerminado()) {
+            mensajeGanador();
+        }
 
+    }
+
+    public void mensajeGanador() {
+        // 1. Instantiate an AlertDialog.Builder with its constructor
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+// 2. Chain together various setter methods to set the dialog characteristics
+        builder.setMessage("Ha ganado el juego")
+                .setTitle("Juego terminado");
+
+// 3. Get the AlertDialog from create()
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
