@@ -13,14 +13,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     ArrayAdapter<String> adapter;
+    Connect4Game juego;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        juego = new Connect4Game();
         setContentView(R.layout.activity_main);
 
         findViewById(R.id.botonReiniciar).setOnClickListener((v) ->
@@ -41,8 +42,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         TextView btn = (TextView) adapter.getView(position, view, parent);
-        int background = position % 2 == 1 ? R.drawable.round_button_red : R.drawable.round_button_yellow;
-        btn.setBackgroundResource(background);
+        if (juego.posicionLibre(position)) {
+            int background = juego.esTurnoPlayer1() ? R.drawable.round_button_yellow : R.drawable.round_button_red;
+            btn.setBackgroundResource(background);
+            juego.jugar(position);
+        }
 
     }
 }
