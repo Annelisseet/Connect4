@@ -1,13 +1,9 @@
 package com.example.annelisse.connect4;
 
-/**
- * Created by ariel on 3/9/18.
- */
-
 public class Connect4Game {
 
-    static final String PLAYER_1 = "player1";
-    static final String PLAYER_2 = "player2";
+    private static final String PLAYER_1 = "player1";
+    private static final String PLAYER_2 = "player2";
     private final int fil = 6;
     private final int col = 7;
     private String currentPlayer;
@@ -29,7 +25,7 @@ public class Connect4Game {
         }
     }
 
-    public boolean posicionLibre(int pos) {
+    boolean posicionLibre(int pos) {
         return !(pos > posiciones.length) && posiciones[pos] == null;
     }
 
@@ -37,7 +33,7 @@ public class Connect4Game {
         return currentPlayer.equals(PLAYER_1);
     }
 
-    public boolean juegoHaTerminado() {
+    boolean juegoHaTerminado() {
         return siUnJugadorHaGanado() || elJuegoEstaTrancado();
     }
 
@@ -46,11 +42,26 @@ public class Connect4Game {
     }
 
     private boolean siUnJugadorHaGanado() {
-        return siHaGanadoHorizontal();
+        return siHaGanadoHorizontal(PLAYER_1) || siHaGanadoHorizontal(PLAYER_2);
     }
 
-    private boolean siHaGanadoHorizontal() {
-
+    private boolean siHaGanadoHorizontal(String player) {
+        int cont = 0;
+        for (int i = 0; i < fil; i++) {
+            for (int j = 0; j < col && cont < 4; j++) {
+                int pos = (i * col) + j;
+                if (player.equals(posiciones[pos])) {
+                    cont++;
+                } else {
+                    cont = 0;
+                }
+            }
+            if (cont == 4) {
+               return true;
+            } else {
+                cont = 0;
+            }
+        }
         return false;
     }
 }
