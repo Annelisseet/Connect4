@@ -1,6 +1,6 @@
 package com.example.annelisse.connect4;
 
-public class Connect4Game {
+class Connect4Game {
 
     private static final String PLAYER_1 = "player1";
     private static final String PLAYER_2 = "player2";
@@ -14,8 +14,8 @@ public class Connect4Game {
         posiciones = new String[fil * col];
     }
 
-    public String getCurrentPlayer() {
-        return currentPlayer;
+    boolean currentPlayerEsPlayer1() {
+        return currentPlayer.equals(PLAYER_1);
     }
 
     void jugar(int pos) {

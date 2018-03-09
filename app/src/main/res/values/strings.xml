@@ -1,6 +1,7 @@
-<resources xmlns:android="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
     <string name="app_name">Connect4</string>
     <string name="iniciar_juego">Iniciar Juego</string>
     <string name="reiniciar">Reiniciar</string>
+    <string name="_0">0</string>
 
 </resources>
