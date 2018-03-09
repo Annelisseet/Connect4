@@ -2,25 +2,28 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:gravity="center_vertical|center"
+    android:gravity="top|center"
     android:orientation="vertical"
     android:padding="5dp"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/layoutHorizontal"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
+        android:gravity="top|center_horizontal"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="40dp"
             android:layout_height="37dp"
+            android:layout_marginBottom="2dp"
             android:layout_weight="0"
             android:background="@drawable/round_button_yellow"
             android:padding="5dp"
@@ -30,16 +33,18 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:layout_weight="0"
-            android:text="TextView"
+            android:text="0"
             android:textColor="@android:color/background_light"
-            tools:text="0" />
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/botonReiniciar"
             android:layout_width="150dp"
             android:layout_height="37dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_weight="0"
             android:background="@drawable/round_button_red"
@@ -50,26 +55,22 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
             android:layout_weight="0"
-            android:text="TextView"
+            android:text="0"
             android:textColor="@android:color/background_light"
-            tools:text="0" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="40dp"
             android:layout_height="37dp"
+            android:layout_marginBottom="2dp"
             android:layout_weight="0"
             android:background="@drawable/round_button_red"
             android:padding="5dp"
             android:textSize="18sp" />
     </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </RelativeLayout>
 
     <GridView
 
@@ -77,10 +78,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="20dp"
         android:background="@color/colorPrimary"
         android:columnWidth="80dp"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:horizontalSpacing="10dp"
         android:numColumns="7"
         android:padding="2dp"

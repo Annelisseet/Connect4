@@ -1,5 +1,6 @@
 package com.example.annelisse.connect4;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         juego = new Connect4Game();
         setContentView(R.layout.activity_main);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         findViewById(R.id.botonReiniciar).setOnClickListener((v) ->
                 startActivity(new Intent(this, MainActivity.class))
