@@ -44,8 +44,8 @@ class Connect4Game {
     private boolean siUnJugadorHaGanado() {
         return siHaGanadoHorizontal(PLAYER_1)
                 || siHaGanadoHorizontal(PLAYER_2)
-                || haGanadoVertical(PLAYER_1)
-                || haGanadoVertical(PLAYER_2);
+                || siHaGanadoVertical(PLAYER_1)
+                || siHaGanadoVertical(PLAYER_2);
     }
 
     private boolean siHaGanadoHorizontal(String player) {
@@ -68,11 +68,11 @@ class Connect4Game {
         return false;
     }
 
-    private boolean haGanadoVertical(String player) {
+    private boolean siHaGanadoVertical(String player) {
         int cont = 0;
         for (int i = 0; i < col; i++) {
             for (int j = 0; j < fil && cont < 4; j++) {
-                int pos = ((i + fil ) * j ) + 1;
+                int pos = (j * col ) + i;
                 if (player.equals(posiciones[pos])) {
                     cont++;
                 } else {
