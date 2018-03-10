@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         juego = new Connect4Game();
         contador = new Connect4Contador();
         setContentView(R.layout.activity_main);
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         gridView = findViewById(R.id.myGridViewComponent);
