@@ -2,8 +2,13 @@
     <string name="app_name">Connect4</string>
     <string name="iniciar_juego">Iniciar Juego</string>
     <string name="reiniciar">Reiniciar</string>
-    <string name="dialog_juego_terminado">Reiniciar</string>
-    <string name="ok">Reiniciar</string>
+    <string name="juego_terminado">Juego Terminado</string>
+    <string name="ok">OK</string>
     <string name="_0">0</string>
+    <string name="juego_trancado">El juego esta trancado</string>
+    <string name="el_jugador">El Jugador</string>
+    <string name="ha_ganado_la_partida">ha ganado la partida.</string>
+    <string name="blank">%d</string>
+
 
 </resources>

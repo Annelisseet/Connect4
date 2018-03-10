@@ -37,8 +37,13 @@ class Connect4Game {
         return siUnJugadorHaGanado() || elJuegoEstaTrancado();
     }
 
-    private boolean elJuegoEstaTrancado() {
-        return false;
+    boolean elJuegoEstaTrancado() {
+        for (String p : posiciones) {
+            if (p == null) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private boolean siUnJugadorHaGanado() {
@@ -112,7 +117,7 @@ class Connect4Game {
         for (int i = 0; i < 3; i++) {
             for (int col = 0; col < 4; col++) {
                 int pos = col + (i * totalCol);
-                for (int fil = i; fil < totalFilas && (fil + (col-i) <= totalFilas) && cont < 4; fil++) {
+                for (int fil = i; fil < totalFilas && (fil + (col - i) <= totalFilas) && cont < 4; fil++) {
                     if (siPosicionHaSidoJugadaPor(pos, player)) {
                         cont++;
                     } else {
@@ -137,7 +142,7 @@ class Connect4Game {
         for (int i = 0; i < 3; i++) {
             for (int col = 0; col < 4; col++) {
                 int pos = 35 + col - (totalCol * i);
-                for (int fil = i; fil < totalFilas && (fil + (col-i) <= totalFilas) && cont < 4; fil++) {
+                for (int fil = i; fil < totalFilas && (fil + (col - i) <= totalFilas) && cont < 4; fil++) {
                     if (siPosicionHaSidoJugadaPor(pos, player)) {
                         cont++;
                     } else {
@@ -167,7 +172,7 @@ class Connect4Game {
         for (int i = 0; i < 3; i++) {
             for (int col = 0; col < 4; col++) {
                 int pos = (totalFilas - col) + totalCol * i;
-                for (int fil = i; fil < totalFilas && (fil + (col-i) <= totalFilas) && cont < 4; fil++) {
+                for (int fil = i; fil < totalFilas && (fil + (col - i) <= totalFilas) && cont < 4; fil++) {
                     if (siPosicionHaSidoJugadaPor(pos, player)) {
                         cont++;
                     } else {
@@ -175,13 +180,14 @@ class Connect4Game {
                     }
                     pos += totalFilas;
                 }
-            }
-            if (cont == 4) {
-                return true;
-            } else {
-                cont = 0;
+                if (cont == 4) {
+                    return true;
+                } else {
+                    cont = 0;
 
+                }
             }
+
 
         }
         return false;
@@ -192,7 +198,7 @@ class Connect4Game {
         for (int i = 0; i < 3; i++) {
             for (int col = 0; col < 4; col++) {
                 int pos = ((totalFilas * totalCol - 1) - col) - (totalCol * i);
-                for (int fil = i; fil < totalFilas && (fil + (col-i) <= totalFilas) && cont < 4; fil++) {
+                for (int fil = i; fil < totalFilas && (fil + (col - i) <= totalFilas) && cont < 4; fil++) {
                     if (siPosicionHaSidoJugadaPor(pos, player)) {
                         cont++;
                     } else {
